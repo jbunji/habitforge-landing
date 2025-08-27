@@ -745,4 +745,11 @@ body {
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow-lg);
     }
+    
+    /* Specific fix for step-2 image */
+    .step-2-image {
+        min-width: 100% !important;
+        object-fit: contain !important;
+        aspect-ratio: auto !important;
+    }
 }
