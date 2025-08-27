@@ -732,12 +732,17 @@ body {
     }
 }
 
-/* iOS Safari specific fixes */
-@supports (-webkit-touch-callout: none) {
-    .step-image {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        margin-left: calc(-1 * var(--space-md)) !important;
-        margin-right: calc(-1 * var(--space-md)) !important;
+/* Ensure all step images are consistent on mobile */
+@media (max-width: 480px) {
+    /* Reset any conflicting styles */
+    img.step-image {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        margin: var(--space-xl) 0 !important;
+        padding: 0 !important;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
     }
 }
