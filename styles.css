@@ -658,6 +658,7 @@ body {
     .step {
         grid-template-columns: 1fr;
         text-align: center;
+        display: block !important; /* Override grid display on mobile */
     }
     
     .step:nth-child(even) {
@@ -746,15 +747,11 @@ body {
         box-shadow: var(--shadow-lg);
     }
     
-    /* Specific fix for step-2 image */
+    /* Ensure all images display properly */
+    .step-image,
     .step-2-image {
-        min-width: 100% !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        margin-left: calc(-1 * var(--space-md)) !important;
-        margin-right: calc(-1 * var(--space-md)) !important;
-        object-fit: cover !important;
-        object-position: center !important;
-        aspect-ratio: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
     }
 }
