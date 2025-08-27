@@ -459,7 +459,7 @@ body {
 
 .step-image {
     width: 100%;
-    max-width: 600px;
+    max-width: 300px;
     margin: 0 auto;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
@@ -661,6 +661,22 @@ body {
     /* Force container to full width */
     .container {
         padding: 0 var(--space-lg);
+    }
+    
+    /* Stack step header on mobile */
+    .step-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-md);
+    }
+    
+    .step-number {
+        margin-bottom: var(--space-sm);
+    }
+    
+    .step-image {
+        max-width: 100%;
     }
     .nav-links {
         gap: var(--space-md);
