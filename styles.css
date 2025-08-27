@@ -666,6 +666,8 @@ body {
     
     .step-image {
         order: 2;
+        max-width: 300px;
+        margin: var(--space-lg) auto;
     }
     
     .footer-content {
