@@ -667,11 +667,17 @@ body {
         margin-right: var(--space-lg);
         margin-top: 0;
         margin-bottom: var(--space-lg);
+        position: relative;
+        top: -5px; /* Adjust vertical position */
     }
     
     .step-content {
         overflow: hidden; /* Clear float */
         text-align: left;
+    }
+    
+    .step-content h3 {
+        margin-top: 0; /* Remove top margin from heading */
     }
     
     .step:nth-child(even) {
