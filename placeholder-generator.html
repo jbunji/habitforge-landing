@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Screenshot Placeholder Generator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .generator {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin: 10px;
+        }
+        button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0051D5;
+        }
+    </style>
+</head>
+<body>
+    <div class="generator">
+        <h1>HabitForge Screenshot Placeholder Generator</h1>
+        <p>Click each button to generate and download placeholder images. Use these until you have real screenshots.</p>
+        
+        <h2>Phone Screenshots (300x650)</h2>
+        <canvas id="phone" width="300" height="650"></canvas>
+        <br>
+        <button onclick="generateHero()">Generate Hero Screen</button>
+        <button onclick="generateDashboard()">Generate Dashboard</button>
+        <button onclick="generateAICoach()">Generate AI Coach</button>
+        <button onclick="generateAnalytics()">Generate Analytics</button>
+        <button onclick="generateGamification()">Generate Gamification</button>
+        <button onclick="generateStep(1)">Generate Step 1</button>
+        <button onclick="generateStep(2)">Generate Step 2</button>
+        <button onclick="generateStep(3)">Generate Step 3</button>
+        
+        <h2>Avatar Images (100x100)</h2>
+        <canvas id="avatar" width="100" height="100"></canvas>
+        <br>
+        <button onclick="generateAvatar(1)">Generate Avatar 1</button>
+        <button onclick="generateAvatar(2)">Generate Avatar 2</button>
+        <button onclick="generateAvatar(3)">Generate Avatar 3</button>
+    </div>
+
+    <script>
+        const phoneCanvas = document.getElementById('phone');
+        const phoneCtx = phoneCanvas.getContext('2d');
+        const avatarCanvas = document.getElementById('avatar');
+        const avatarCtx = avatarCanvas.getContext('2d');
+
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function generateHero() {
+            const gradient = phoneCtx.createLinearGradient(0, 0, 300, 650);
+            gradient.addColorStop(0, '#007AFF');
+            gradient.addColorStop(1, '#5856D6');
+            phoneCtx.fillStyle = gradient;
+            phoneCtx.fillRect(0, 0, 300, 650);
+            
+            phoneCtx.fillStyle = 'white';
+            phoneCtx.font = 'bold 24px -apple-system, sans-serif';
+            phoneCtx.textAlign = 'center';
+            phoneCtx.fillText('HabitForge', 150, 100);
+            phoneCtx.font = '16px -apple-system, sans-serif';
+            phoneCtx.fillText('Hero Screen', 150, 130);
+            
+            // Simulate habit cards
+            for (let i = 0; i < 3; i++) {
+                phoneCtx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                phoneCtx.roundRect(30, 200 + i * 120, 240, 100, 12);
+                phoneCtx.fill();
+            }
+            
+            downloadCanvas(phoneCanvas, 'hero-screen.png');
+        }
+
+        function generateDashboard() {
+            phoneCtx.fillStyle = '#F5F7FA';
+            phoneCtx.fillRect(0, 0, 300, 650);
+            
+            phoneCtx.fillStyle = '#007AFF';
+            phoneCtx.font = 'bold 20px -apple-system, sans-serif';
+            phoneCtx.textAlign = 'center';
+            phoneCtx.fillText('Dashboard', 150, 50);
+            
+            // Simulate habit list
+            const colors = ['#34C759', '#007AFF', '#FF9500', '#AF52DE', '#FF3B30'];
+            for (let i = 0; i < 5; i++) {
+                phoneCtx.fillStyle = 'white';
+                phoneCtx.roundRect(20, 80 + i * 110, 260, 90, 8);
+                phoneCtx.fill();
+                
+                phoneCtx.fillStyle = colors[i];
+                phoneCtx.beginPath();
+                phoneCtx.arc(50, 125 + i * 110, 20, 0, 2 * Math.PI);
+                phoneCtx.fill();
+            }
+            
+            downloadCanvas(phoneCanvas, 'dashboard.png');
+        }
+
+        function generateAICoach() {
+            phoneCtx.fillStyle = '#667EEA';
+            phoneCtx.fillRect(0, 0, 300, 650);
+            
+            phoneCtx.fillStyle = 'white';
+            phoneCtx.font = 'bold 20px -apple-system, sans-serif';
+            phoneCtx.textAlign = 'center';
+            phoneCtx.fillText('AI Coach', 150, 50);
+            phoneCtx.font = '60px -apple-system, sans-serif';
+            phoneCtx.fillText('🧠', 150, 150);
+            
+            // AI message cards
+            for (let i = 0; i < 3; i++) {
+                phoneCtx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                phoneCtx.roundRect(30, 220 + i * 130, 240, 110, 12);
+                phoneCtx.fill();
+            }
+            
+            downloadCanvas(phoneCanvas, 'ai-coach.png');
+        }
+
+        function generateAnalytics() {
+            phoneCtx.fillStyle = '#F8F9FA';
+            phoneCtx.fillRect(0, 0, 300, 650);
+            
+            phoneCtx.fillStyle = '#1C1C1E';
+            phoneCtx.font = 'bold 20px -apple-system, sans-serif';
+            phoneCtx.textAlign = 'center';
+            phoneCtx.fillText('Analytics', 150, 50);
+            
+            // Heatmap grid
+            const colors = ['#E5F7E5', '#A5E3A5', '#65C965', '#34C759'];
+            for (let row = 0; row < 5; row++) {
+                for (let col = 0; col < 7; col++) {
+                    phoneCtx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+                    phoneCtx.roundRect(30 + col * 35, 100 + row * 35, 30, 30, 4);
+                    phoneCtx.fill();
+                }
+            }
+            
+            // Metric cards
+            for (let i = 0; i < 4; i++) {
+                phoneCtx.fillStyle = '#007AFF';
+                phoneCtx.globalAlpha = 0.1;
+                phoneCtx.roundRect(30 + (i % 2) * 125, 320 + Math.floor(i / 2) * 100, 110, 80, 8);
+                phoneCtx.fill();
+                phoneCtx.globalAlpha = 1;
+            }
+            
+            downloadCanvas(phoneCanvas, 'analytics.png');
+        }
+
+        function generateGamification() {
+            const gradient = phoneCtx.createLinearGradient(0, 0, 300, 650);
+            gradient.addColorStop(0, '#FF9500');
+            gradient.addColorStop(1, '#FF3B30');
+            phoneCtx.fillStyle = gradient;
+            phoneCtx.fillRect(0, 0, 300, 650);
+            
+            phoneCtx.fillStyle = 'white';
+            phoneCtx.font = 'bold 20px -apple-system, sans-serif';
+            phoneCtx.textAlign = 'center';
+            phoneCtx.fillText('Level 12', 150, 50);
+            phoneCtx.font = '60px -apple-system, sans-serif';
+            phoneCtx.fillText('🏆', 150, 150);
+            
+            // XP Bar
+            phoneCtx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            phoneCtx.roundRect(30, 200, 240, 20, 10);
+            phoneCtx.fill();
+            phoneCtx.fillStyle = 'white';
+            phoneCtx.roundRect(30, 200, 180, 20, 10);
+            phoneCtx.fill();
+            
+            // Badges
+            const badges = ['⭐', '🎯', '🔥', '💎'];
+            for (let i = 0; i < 4; i++) {
+                phoneCtx.font = '40px -apple-system, sans-serif';
+                phoneCtx.fillText(badges[i], 60 + i * 60, 300);
+            }
+            
+            downloadCanvas(phoneCanvas, 'gamification.png');
+        }
+
+        function generateStep(num) {
+            const colors = ['#007AFF', '#34C759', '#AF52DE'];
+            phoneCtx.fillStyle = colors[num - 1];
+            phoneCtx.fillRect(0, 0, 300, 650);
+            
+            phoneCtx.fillStyle = 'white';
+            phoneCtx.font = 'bold 60px -apple-system, sans-serif';
+            phoneCtx.textAlign = 'center';
+            phoneCtx.fillText(num, 150, 200);
+            phoneCtx.font = 'bold 24px -apple-system, sans-serif';
+            phoneCtx.fillText(`Step ${num}`, 150, 250);
+            
+            phoneCtx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            phoneCtx.roundRect(30, 300, 240, 200, 12);
+            phoneCtx.fill();
+            
+            downloadCanvas(phoneCanvas, `step-${num}.png`);
+        }
+
+        function generateAvatar(num) {
+            const colors = ['#007AFF', '#34C759', '#FF9500'];
+            avatarCtx.fillStyle = colors[num - 1];
+            avatarCtx.beginPath();
+            avatarCtx.arc(50, 50, 50, 0, 2 * Math.PI);
+            avatarCtx.fill();
+            
+            avatarCtx.fillStyle = 'white';
+            avatarCtx.font = 'bold 40px -apple-system, sans-serif';
+            avatarCtx.textAlign = 'center';
+            avatarCtx.textBaseline = 'middle';
+            avatarCtx.fillText(num, 50, 50);
+            
+            downloadCanvas(avatarCanvas, `user${num}.jpg`);
+        }
+
+        // Polyfill for roundRect if needed
+        if (!CanvasRenderingContext2D.prototype.roundRect) {
+            CanvasRenderingContext2D.prototype.roundRect = function(x, y, width, height, radius) {
+                if (width < 2 * radius) radius = width / 2;
+                if (height < 2 * radius) radius = height / 2;
+                this.beginPath();
+                this.moveTo(x + radius, y);
+                this.arcTo(x + width, y, x + width, y + height, radius);
+                this.arcTo(x + width, y + height, x, y + height, radius);
+                this.arcTo(x, y + height, x, y, radius);
+                this.arcTo(x, y, x + width, y, radius);
+                this.closePath();
+            };
+        }
+    </script>
+</body>
+</html>
