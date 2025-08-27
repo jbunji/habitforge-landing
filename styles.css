@@ -661,13 +661,23 @@ body {
         display: block !important; /* Override grid display on mobile */
     }
     
+    /* Fix step number alignment on mobile */
+    .step-number {
+        float: left;
+        margin-right: var(--space-lg);
+        margin-top: 0;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .step-content {
+        overflow: hidden; /* Clear float */
+        text-align: left;
+    }
+    
     .step:nth-child(even) {
         grid-template-columns: 1fr;
     }
     
-    .step-number {
-        margin: 0 auto;
-    }
     
     .step-image {
         order: 2;
