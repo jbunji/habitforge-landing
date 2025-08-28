@@ -57,7 +57,7 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             // Replace with your TestFlight URL when ready
-            window.open('https://testflight.apple.com/join/YOUR_CODE', '_blank');
+            window.open('https://testflight.apple.com/join/x2ZKZeht', '_blank');
         });
     }
 });
