@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's New - HabitForge 2.0</title>
+    <meta name="description" content="HabitForge 2.0 introduces AI-powered habit planning, smart insights, and personalized coaching to transform how you build lasting habits.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .whats-new-page {
+            padding: 100px 0 60px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+        
+        .whats-new-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            color: white;
+            border-radius: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .whats-new-title {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .whats-new-subtitle {
+            font-size: 24px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .feature-showcase {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+        
+        .major-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+        
+        .major-feature:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .major-feature:nth-child(even) .feature-content {
+            order: 2;
+        }
+        
+        .major-feature:nth-child(even) .feature-visual {
+            order: 1;
+        }
+        
+        .feature-content {
+            padding: 40px;
+        }
+        
+        .feature-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #f1f5f9;
+            color: #667EEA;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .feature-content h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .feature-content p {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        
+        .feature-benefits {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-benefits li {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .feature-visual {
+            position: relative;
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            color: #667EEA;
+        }
+        
+        .minor-features {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+        
+        .minor-features h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        
+        .minor-feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        .minor-feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .minor-feature-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .update-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            border-radius: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .update-cta h2 {
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .update-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            margin-bottom: 32px;
+        }
+        
+        @media (max-width: 768px) {
+            .major-feature {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .major-feature:nth-child(even) .feature-content {
+                order: 1;
+            }
+            
+            .major-feature:nth-child(even) .feature-visual {
+                order: 2;
+            }
+            
+            .whats-new-title {
+                font-size: 40px;
+            }
+            
+            .feature-content h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="icon.png" alt="HabitForge" class="logo-icon">
+                    <span class="logo-text">HabitForge</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="support.html" class="nav-link">Support</a>
+                    <a href="https://testflight.apple.com/join/x2ZKZeht" target="_blank" class="btn btn-primary">Join Beta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- What's New Content -->
+    <div class="whats-new-page">
+        <div class="container">
+            <div class="whats-new-header">
+                <div class="version-badge">Version 2.0</div>
+                <h1 class="whats-new-title">AI-Powered Habit Transformation</h1>
+                <p class="whats-new-subtitle">HabitForge 2.0 introduces groundbreaking AI features that transform any goal into your personal success story</p>
+            </div>
+            
+            <!-- Major Features -->
+            <div class="feature-showcase">
+                <!-- AI Plan Generator -->
+                <div class="major-feature">
+                    <div class="feature-content">
+                        <div class="feature-tag">NEW</div>
+                        <h2>AI Habit Plan Generator</h2>
+                        <p>Simply tell HabitForge your goal - "run a marathon," "write a book," "learn Spanish" - and watch as AI creates your complete transformation roadmap in seconds.</p>
+                        <ul class="feature-benefits">
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Personalized week-by-week progression plans</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Smart phase transitions as you build momentum</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Difficulty-adjusted habits that grow with you</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>One-tap habit creation from AI suggestions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="screenshots/ai-generator.png" alt="AI Plan Generator" class="feature-image">
+                        <div class="floating-badge">Powered by GPT-4</div>
+                    </div>
+                </div>
+                
+                <!-- Smart Insights -->
+                <div class="major-feature">
+                    <div class="feature-content">
+                        <div class="feature-tag">NEW</div>
+                        <h2>Predictive AI Insights</h2>
+                        <p>Our AI analyzes your habit patterns to predict when you're at risk of breaking streaks and provides personalized coaching exactly when you need it most.</p>
+                        <ul class="feature-benefits">
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Streak risk predictions before you miss</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Personalized motivational messages</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Best time recommendations based on your data</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Success pattern analysis and optimization</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="screenshots/ai-insights.png" alt="AI Insights" class="feature-image">
+                    </div>
+                </div>
+                
+                <!-- Adaptive Coaching -->
+                <div class="major-feature">
+                    <div class="feature-content">
+                        <div class="feature-tag">NEW</div>
+                        <h2>Adaptive AI Coaching</h2>
+                        <p>Experience coaching that learns and adapts to your unique journey. Get personalized advice, celebrate milestones, and receive support during challenges.</p>
+                        <ul class="feature-benefits">
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Daily coaching tips based on your progress</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Milestone celebrations and rewards</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Difficulty adjustments when you struggle</span>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">✓</div>
+                                <span>Success strategies from similar users</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="screenshots/ai-coach.png" alt="AI Coaching" class="feature-image">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Minor Features -->
+            <div class="minor-features">
+                <h2>More Improvements & Features</h2>
+                <div class="features-grid">
+                    <div class="minor-feature-card">
+                        <h3>🎯 Smart Templates</h3>
+                        <p>Even without premium, get expertly crafted habit templates for popular goals like fitness, productivity, and wellness.</p>
+                    </div>
+                    
+                    <div class="minor-feature-card">
+                        <h3>📱 Enhanced iPad Experience</h3>
+                        <p>Completely redesigned iPad interface with optimized layouts, better navigation, and full feature parity with iPhone.</p>
+                    </div>
+                    
+                    <div class="minor-feature-card">
+                        <h3>🔄 Improved Sync</h3>
+                        <p>Rock-solid synchronization between all your devices. Your habits and progress stay perfectly in sync.</p>
+                    </div>
+                    
+                    <div class="minor-feature-card">
+                        <h3>🎨 Visual Improvements</h3>
+                        <p>Refreshed UI with smoother animations, better contrast, and improved accessibility throughout the app.</p>
+                    </div>
+                    
+                    <div class="minor-feature-card">
+                        <h3>⚡ Performance Boost</h3>
+                        <p>Faster app launch, smoother scrolling, and reduced memory usage for a better experience on all devices.</p>
+                    </div>
+                    
+                    <div class="minor-feature-card">
+                        <h3>🐛 Bug Fixes</h3>
+                        <p>Squashed dozens of bugs including notification timing, streak calculations, and widget refresh issues.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="update-cta">
+                <h2>Ready to Transform Your Habits with AI?</h2>
+                <p>Join the beta and be among the first to experience the future of habit building</p>
+                <a href="https://testflight.apple.com/join/x2ZKZeht" target="_blank" class="btn btn-large btn-white">
+                    Get Early Access
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="icon.png" alt="HabitForge" class="logo-icon">
+                        <span class="logo-text">HabitForge</span>
+                    </div>
+                    <p class="footer-tagline">Building better habits with AI</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="https://testflight.apple.com/join/x2ZKZeht">Beta Access</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="https://twitter.com/habitforge">Twitter</a>
+                        <a href="#">Reddit</a>
+                        <a href="mailto:support@habitforge.org">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HabitForge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

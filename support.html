@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - HabitForge</title>
+    <meta name="description" content="Get help with HabitForge - AI-powered habit tracking app. Contact support, view FAQs, and find helpful resources.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .support-page {
+            padding: 100px 0 60px;
+            min-height: 100vh;
+        }
+        
+        .support-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .support-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .support-subtitle {
+            font-size: 20px;
+            color: #64748b;
+        }
+        
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .support-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        .support-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            gap: 16px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .contact-method:hover {
+            background: #f1f5f9;
+            transform: translateX(4px);
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .contact-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .contact-info p {
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        .faq-item {
+            padding: 24px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .faq-answer {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        
+        .resource-card {
+            padding: 24px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .resource-card:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+        
+        .resource-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .resource-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="icon.png" alt="HabitForge" class="logo-icon">
+                    <span class="logo-text">HabitForge</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="index.html#how-it-works" class="nav-link">How it Works</a>
+                    <a href="https://testflight.apple.com/join/x2ZKZeht" target="_blank" class="btn btn-primary">Join Beta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Support Content -->
+    <div class="support-page">
+        <div class="container">
+            <div class="support-header">
+                <h1 class="support-title">How Can We Help?</h1>
+                <p class="support-subtitle">We're here to help you build better habits</p>
+            </div>
+            
+            <div class="support-content">
+                <!-- Contact Section -->
+                <div class="support-section">
+                    <h2>Contact Support</h2>
+                    <div class="contact-methods">
+                        <a href="mailto:support@habitforge.org" class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-info">
+                                <h3>Email Support</h3>
+                                <p>support@habitforge.org • Response within 24 hours</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/habitforge/support/issues" target="_blank" class="contact-method">
+                            <div class="contact-icon">🐛</div>
+                            <div class="contact-info">
+                                <h3>Report a Bug</h3>
+                                <p>File issues and feature requests on GitHub</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://twitter.com/habitforge" target="_blank" class="contact-method">
+                            <div class="contact-icon">🐦</div>
+                            <div class="contact-info">
+                                <h3>Twitter/X</h3>
+                                <p>@habitforge • Quick questions and updates</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="support-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">How does the AI Plan Generator work?</div>
+                            <div class="faq-answer">
+                                Simply type your goal (like "run a marathon" or "write a book") and our AI creates a personalized, week-by-week plan with daily habits that progressively build toward your goal. The AI considers difficulty progression, time commitment, and proven habit-building strategies.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Is my data private and secure?</div>
+                            <div class="faq-answer">
+                                Yes! Your habit data is encrypted and stored securely. We never sell or share your personal information. You can delete your account and all associated data at any time from the app settings.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">How much does HabitForge cost?</div>
+                            <div class="faq-answer">
+                                HabitForge is free during beta testing! After launch, we'll offer both free and premium tiers. Beta testers will receive exclusive lifetime discounts on premium features as a thank you for helping us improve.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Does it sync between devices?</div>
+                            <div class="faq-answer">
+                                Yes! HabitForge syncs seamlessly between all your iOS devices using iCloud. Your habits, progress, and AI insights are always up to date across iPhone and iPad.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Can I customize the AI-generated plans?</div>
+                            <div class="faq-answer">
+                                Absolutely! While AI creates the initial plan, you can modify habits, adjust schedules, and customize everything to fit your lifestyle. The AI learns from your modifications to improve future suggestions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resources Section -->
+                <div class="support-section">
+                    <h2>Helpful Resources</h2>
+                    <div class="resources-grid">
+                        <a href="https://habitforge.org/getting-started" class="resource-card">
+                            <h3>Getting Started Guide</h3>
+                            <p>Learn how to make the most of HabitForge's features</p>
+                        </a>
+                        
+                        <a href="https://habitforge.org/blog" class="resource-card">
+                            <h3>Blog & Tips</h3>
+                            <p>Habit-building strategies and app updates</p>
+                        </a>
+                        
+                        <a href="privacy.html" class="resource-card">
+                            <h3>Privacy Policy</h3>
+                            <p>How we protect your data and privacy</p>
+                        </a>
+                        
+                        <a href="terms.html" class="resource-card">
+                            <h3>Terms of Service</h3>
+                            <p>Terms and conditions for using HabitForge</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="icon.png" alt="HabitForge" class="logo-icon">
+                        <span class="logo-text">HabitForge</span>
+                    </div>
+                    <p class="footer-tagline">Building better habits with AI</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="https://testflight.apple.com/join/x2ZKZeht">Beta Access</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="https://twitter.com/habitforge">Twitter</a>
+                        <a href="#">Reddit</a>
+                        <a href="mailto:support@habitforge.org">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HabitForge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
