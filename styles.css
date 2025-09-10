@@ -90,7 +90,7 @@ body {
 /* Navigation */
 .nav {
     position: fixed;
-    top: 52px; /* Height of Product Hunt banner */
+    top: 52px; /* Below PH banner */
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
