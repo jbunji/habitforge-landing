@@ -90,7 +90,7 @@ body {
 /* Navigation */
 .nav {
     position: fixed;
-    top: 0;
+    top: 52px; /* Height of Product Hunt banner */
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
@@ -213,7 +213,7 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: calc(80px + var(--space-4xl)) 0 var(--space-4xl);
+    padding: calc(132px + var(--space-4xl)) 0 var(--space-4xl); /* Added 52px for banner */
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     overflow: hidden;
 }
